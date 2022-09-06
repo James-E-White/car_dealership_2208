@@ -32,9 +32,24 @@ RSpec.describe Car do
     expect(@car.loan_length).to eq(36)
   end
 
+  describe'#totalt_cost'
   it 'has a total cost' do
     @car = Car.new("Ford Mustang", 1500, 36)
 
     expect(@car.total_cost).to eq(54000)
   end
-end
+
+  it 'has a color' do
+    @car = Car.new("Ford Mustang", 1500, 36)
+
+    expect(@car.color).to be(nil)
+  end
+
+  #describe'#paint!
+  it 'has paint!' do
+    @car = Car.new("Ford Mustang", 1500, 36)
+    @car.paint!(:blue)
+
+    expect(@car.color).to be(:blue)
+  end
+ end
